@@ -19,10 +19,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo-siloroll.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.juliocrv.SiloRoll"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ca8a5a13-715f-48c7-8a3e-cd7424bbe068"
+      }
     }
   }
 }
