@@ -1,11 +1,23 @@
 import * as React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-export default function DetailsScreen({navigation}) {
+export default function DetailsScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={styles.description}>
-        INICIO
+                INICIO
+            </Text>
+            <Text style={styles.description}>
+                SiloRoll es un proceso de Empaquetamiento de Ensilaje con alta Densidad en su contenido Sellandolo
+                con una Malla elastica que se coloca alrededor del Rollo y finalmente clausurando todas sus entradas
+                de aire con un Film Strech que deja blindado el contenido interior aislandolo de la influencia
+                ambiente para estabilizar todos sus nutrientes y asi permanecer el tiempo de almacenamiento requerido...
+            </Text>
+            <Text style={styles.description}>
+            Nuestra misión es atender las exigencias nutricionales del sector ganadero boliviano con alimentos de 
+            excelente calidad producidos a tiempo con los mejores controles para llegar a tener disponibles en los 
+            tiempos precisos y oportunos un alimento que cumpla con los estándares requeridos para todo productor 
+            que se haya comprometido en atender el mercado alimentario
             </Text>
         </View>
     );
