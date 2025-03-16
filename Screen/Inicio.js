@@ -11,7 +11,7 @@ export default function DetailsScreen({ navigation }) {
             {/* Logo de la empresa */}
             <Image source={require("../assets/logo-siloroll.png")} style={styles.logo} />
 
-            <Text style={styles.title}>Bienvenido a SiloRoll</Text>
+            <Text style={styles.title}>Bienvenido a Siloroll</Text>
 
             <Text style={styles.description}>
                 <Text style={styles.bold}>SiloRoll</Text> es una empresa especializada en el{" "}
