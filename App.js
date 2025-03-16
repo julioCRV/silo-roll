@@ -58,7 +58,7 @@ function MainContainer() {
             tabBarActiveTintColor: '#0DF205',
             tabBarInactiveTintColor: '#56A632',
             tabBarLabelStyle: { paddingBottom: 10, fontSize: 14 },
-            tabBarStyle: { padding: 10, height: 70, backgroundColor: '#737373' },
+            tabBarStyle: { padding: 10, height: 70, backgroundColor: '#2c3e50' },
             tabBarButton: (props) => {
               const { children, onPress, accessibilityState } = props;
               const isSelected = accessibilityState.selected;

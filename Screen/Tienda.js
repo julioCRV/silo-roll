@@ -57,7 +57,7 @@ const ProductList = () => {
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 30, backgroundColor: "#737373" },
+    container: { flex: 1, padding: 30, backgroundColor: "#2c3e50" },
     card: { backgroundColor: "#FFF", padding: 10, borderRadius: 10, marginBottom: 10, alignItems: "center", elevation: 3 },
     image: { width: 100, height: 100, borderRadius: 10 },
     name: { fontSize: 20, fontWeight: "bold" },
