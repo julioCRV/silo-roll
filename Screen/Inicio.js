@@ -1,88 +1,84 @@
-import React , {useMemo}from "react";
+import React, { useMemo } from "react";
 import useResponsive from '../hooks/useResponsive';
 import Theme from '../theme';
-import { View, Text, Image, StyleSheet, TouchableOpacity, Linking } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView, ImageBackground } from "react-native";
 
 export default function DetailsScreen() {
-    const { wp, hp, rem } = useResponsive();
+    const { wp, hp, rf, rem, isTablet } = useResponsive();
 
     const dynamicStyles = useMemo(() => StyleSheet.create({
         container: {
             flex: 1,
             alignItems: "center",
+            justifyContent: "flex-start",
+            paddingHorizontal: wp(isTablet ? 4 : 6),
+            paddingVertical: hp(isTablet ? 1 : 2),
+        },
+        backgroundImage: {
+            flex: 1,
+            resizeMode: "cover",
             justifyContent: "center",
-            backgroundColor: Theme.colors.neutralDark,
-            paddingHorizontal: wp(6),
+            width: '100%',
+            height: '100%',
+        },
+        contentContainer: {
+            width: '100%',
+            height: isTablet ? '50%' : '40%',
+            alignItems: "center",
+            marginBottom: wp(isTablet ? 100 : 200),
+            justifyContent: "flex-start",
         },
         logo: {
-            width: wp(50),
-            height: wp(50),
+            width: wp(isTablet ? 30 : 50),
+            height: wp(isTablet ? 30 : 50),
             resizeMode: "contain",
-            marginBottom: hp(2),
-            backgroundColor: Theme.colors.textLight,
-            borderRadius: wp(25),
             overflow: "hidden",
         },
         title: {
-            fontSize: rem(40),
+            fontSize: rem(isTablet ? 30 : 40),
             fontWeight: "bold",
             color: Theme.colors.accent,
-            marginBottom: hp(2),
+            textAlign: "center",
+            marginBottom: hp(isTablet ? 1 : 1.5),
+        },
+        descriptionContainer: {
+            width: '100%',
+            paddingHorizontal: wp(isTablet ? 1 : 1.5)
         },
         description: {
-            fontSize: rem(20),
-            color: Theme.colors.textLight,
-            marginBottom: hp(2),
-            lineHeight: rem(20),
+            fontSize: rem(isTablet ? 12 : 15),
+            color: Theme.colors.textDark,
+            marginBottom: hp(isTablet ? 1.5 : 2),
+            fontWeight: "bold",
+            textAlign: "start",
         },
         bold: {
             fontWeight: "bold",
-            color: Theme.colors.accent,
-        },
-        locationTitle: {
-            fontSize: rem(20),
-            fontWeight: "bold",
-            color: Theme.colors.accent,
-            marginTop: hp(2),
-        },
-        locationLink: {
-            fontSize: rem(15),
             color: Theme.colors.primary,
-            textDecorationLine: "underline",
-            marginTop: hp(1),
         },
-    }), [wp, hp, rem]);
-
-    const openMaps = () => {
-        Linking.openURL("https://maps.app.goo.gl/JhtXKwHVuAFvfjJq5?g_st=aw");
-    };
+    }), [wp, hp, rf, isTablet]);
 
     return (
-        <View style={dynamicStyles.container}>
-            {/* Logo de la empresa */}
-            <Image source={require("../assets/logo-siloroll.png")} style={dynamicStyles.logo} />
-
-            <Text style={dynamicStyles.title}>Bienvenido a SiloRoll</Text>
-
-            <Text style={dynamicStyles.description}>
-                <Text style={dynamicStyles.bold}>SiloRoll</Text> es una empresa especializada en el{" "}
-                <Text style={dynamicStyles.bold}>empaquetamiento de ensilaje de alta densidad</Text>. Nuestro proceso sella el contenido con una{" "}
-                <Text style={dynamicStyles.bold}>malla elástica</Text> y lo blinda con <Text style={dynamicStyles.bold}>film stretch</Text>, asegurando la conservación
-                óptima de los nutrientes en todo el tiempo de almacenamiento.
-            </Text>
-
-            <Text style={dynamicStyles.description}>
-                <Text style={dynamicStyles.bold}>Nuestra misión</Text> es garantizar un suministro confiable de{" "}
-                <Text style={dynamicStyles.bold}>alimentos de calidad</Text> para el sector ganadero boliviano, ofreciendo productos bien conservados y listos
-                en los momentos clave para los productores comprometidos con la excelencia alimentaria.
-            </Text>
-
-            {/* Sección de ubicación */}
-            <Text style={dynamicStyles.locationTitle}>📍 ¿Dónde encontrarnos?</Text>
-            <TouchableOpacity onPress={openMaps}>
-                <Text style={dynamicStyles.locationLink}>Abrir en Google Maps</Text>
-            </TouchableOpacity>
-        </View>
+        <ImageBackground source={require("../assets/FONDO-INICIO.png")} style={dynamicStyles.backgroundImage}>
+            <ScrollView contentContainerStyle={dynamicStyles.container}>
+                <View style={dynamicStyles.contentContainer}>
+                    <Image source={require("../assets/logo-siloroll.png")} style={dynamicStyles.logo} />
+                    <Text style={dynamicStyles.title}>Bienvenido a SiloRoll</Text>
+                    <View style={dynamicStyles.descriptionContainer}>
+                        <Text style={dynamicStyles.description}>
+                            <Text style={dynamicStyles.bold}>SiloRoll</Text> es una empresa especializada en el{" "}
+                            <Text style={dynamicStyles.bold}>empaquetamiento de ensilaje de alta densidad</Text>. Nuestro proceso sella el contenido con una{" "}
+                            <Text style={dynamicStyles.bold}>malla elástica</Text> y lo blinda con <Text style={dynamicStyles.bold}>film stretch</Text>, asegurando la conservación
+                            óptima de los nutrientes en todo el tiempo de almacenamiento.
+                        </Text>
+                        <Text style={dynamicStyles.description}>
+                            <Text style={dynamicStyles.bold}>Nuestra misión</Text> es garantizar un suministro confiable de{" "}
+                            <Text style={dynamicStyles.bold}>alimentos de calidad</Text> para el sector ganadero boliviano, ofreciendo productos bien conservados y listos
+                            en los momentos clave para los productores comprometidos con la excelencia alimentaria.
+                        </Text>
+                    </View>
+                </View>
+            </ScrollView>
+        </ImageBackground>
     );
 }
-

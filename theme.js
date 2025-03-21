@@ -1,12 +1,13 @@
 const Theme = {
     colors: {
-      primary: "#249443",       // Verde principal
-      secondary: "#4EAE32",     // Verde secundario
-      accent: "#F18901",        // Naranja destacado
-      neutralDark: "#3A3A38",   // Gris oscuro
-      neutralLight: "#737373",   // Gris claro
+      primary: "#01AA0E",       // Verde principal
+      secondary: "#04E701",     // Verde secundario
+      accent: "#FE8B03",        // Naranja destacado
+      neutralDark: "#373737",   // Gris oscuro
+      neutralLight: "#757575",   // Gris claro
       textLight: "#E8DCB9",  // Blanco holandes
-      textDark: "#2c3e50",  // Azul oscuro
+      textDarkBlue: "#2c3e50",  // Azul oscuro
+      textDark: "#000000",  // Azul oscuro
     },
     spacing: {
       xs: 4,

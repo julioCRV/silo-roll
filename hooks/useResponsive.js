@@ -37,7 +37,6 @@ const useResponsive = () => {
    */
   const breakpointGroup = useMemo(() => {
     for (let group in breakpoints) {
-      console.log("entrando a breakpoints")
       if (width >= breakpoints[group][0] && width <= breakpoints[group][1]) {
         return group;
       }
@@ -57,7 +56,6 @@ const useResponsive = () => {
    */
   const wp = useCallback((widthPercent) => {
     const elemWidth = typeof widthPercent === "number" ? widthPercent : parseFloat(widthPercent);
-    console.log("Calculando widthPercentageToDP con:", widthPercent);
     return PixelRatio.roundToNearestPixel((width * elemWidth) / 100);
   }, [width]);
 
@@ -66,7 +64,6 @@ const useResponsive = () => {
    */
   const hp = useCallback((heightPercent) => {
     const elemHeight = typeof heightPercent === "number" ? heightPercent : parseFloat(heightPercent);
-    console.log("definido heightPercentageToDP")
     return PixelRatio.roundToNearestPixel((height * elemHeight) / 100);
   }, [height]);
   
@@ -76,7 +73,6 @@ const useResponsive = () => {
    */
   const isTablet = useMemo(() => {
     const aspectRatio = width / height;
-    console.log("definido funcion istable");
     return width >= 768 && aspectRatio > 1.3;
   }, [width, height]);
 
@@ -89,13 +85,11 @@ const useResponsive = () => {
     }
   
     const elementSize = typeof size === "number" ? size : parseFloat(size);
-    console.log("definido rem")
     return Math.floor((base / baseDevice.width) * elementSize * multiplier);
   }, [width, height, isLandscape, isTablet]);
 
   const rf = useCallback((size = 0) => {
     const elementSize = typeof size === "number" ? size : parseFloat(size);
-    console.log("definido funcion rf");
     return Math.min(baseFontSize * maxFontScaleFactor, elementSize);
   }, []);
 
@@ -105,7 +99,6 @@ const useResponsive = () => {
   const hasNotch = useMemo(() => {
     if (Platform.OS !== "ios") return false;
     const notchDevices = [812, 896, 844, 926, 932, 852, 1024];
-    console.log("definido funcion hasnotch");
     return notchDevices.includes(height) || notchDevices.includes(width);
   }, [width, height]);
 

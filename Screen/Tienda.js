@@ -66,84 +66,33 @@ const products = [
         name: "Silo Maíz",
         price: "Bs 1.100 x Tonelada",
         mount: 1100,
-        image: require("../assets/img-silo.png"),
+        image: require("../assets/maiz.png"),
     },
     {
         id: 2,
         name: "Silo Sorgo",
         price: "Bs 1.050 x Tonelada",
         mount: 1050,
-        image: require("../assets/img-silo.png"),
+        image: require("../assets/sorgo.png"),
     },
     {
         id: 3,
         name: "TMR Ración Completa",
         price: "Bs 1.550 x Tonelada",
         mount: 1550,
-        image: require("../assets/img-silo.png"),
+        image: require("../assets/TMR.png"),
     },
 ];
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: Theme.spacing.lg,
-        backgroundColor: Theme.colors.neutralDark
-    },
-    card: {
-        backgroundColor: Theme.colors.neutralLight,
-        borderRadius: Theme.radius.medium,
-        padding: Theme.spacing.sm,
-        margin: Theme.spacing.xs,
-        alignItems: "center",
-        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
-        shadowColor: Theme.colors.neutralDark,
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-        elevation: 3,
-    },
-    image: {
-        marginVertical: Theme.spacing.md,
-    },
-    name: {
-        fontSize: Theme.typography.subheading,
-        color: Theme.colors.primary,
-        fontWeight: '700',
-        textAlign: 'center',
-    },
-    price: {
-        fontSize: Theme.typography.body,
-        fontWeight: '600',
-        color: Theme.colors.accent,
-        marginVertical: Theme.sm,
-    },
-    button: {
-        backgroundColor: Theme.colors.accent,
-        borderRadius: Theme.radius.medium,
-        paddingVertical: Theme.spacing.xs,
-        paddingHorizontal: Theme.spacing.xs,
-        marginTop: Theme.spacing.xs,
-    },
-    buttonText: {
-        color: Theme.colors.textLight,
-        fontSize: Theme.typography.body,
-        fontWeight: 'bold',
-    },
-    title: {
-        fontSize: Theme.typography.heading,
-        color: Theme.colors.primary,
-        padding: Theme.spacing.xl,
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
-    listContent: {
-        alignItems: 'center',
-        paddingBottom: Theme.spacing.sm,
-    },
-    columnWrapper: {
-        justifyContent: 'space-between',
-    },
+    container: { flex: 1, padding: 30, backgroundColor: "#737373" },
+    card: { backgroundColor: "#FFF", padding: 10, borderRadius: 10, marginBottom: 10, alignItems: "center", elevation: 3 },
+    image: { width: 100, height: 100, borderRadius: 10 },
+    name: { fontSize: 20, fontWeight: "bold" },
+    price: { fontSize: 18, color: "#555" },
+    button: { backgroundColor: "#28A745", padding: 10, borderRadius: 30, marginTop: 5, alignItems: "center", width: 100 },
+    buttonText: { color: "#FFF", fontWeight: "bold" },
+    title: { fontSize: 32, textAlign: 'center', padding: 20 }
 });
 
 export default ProductList;

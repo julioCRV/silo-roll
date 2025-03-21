@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "SILOROLL",
+    "name": "Silo-Roll",
     "slug": "Silo-Roll",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo-siloroll.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
@@ -17,24 +17,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logo-siloroll.png",
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.juliocrv.SiloRoll"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "ca8a5a13-715f-48c7-8a3e-cd7424bbe068"
-      }
-    },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/ca8a5a13-715f-48c7-8a3e-cd7424bbe068"
     }
   }
 }
